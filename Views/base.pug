@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css")
+        title #{pageTitle} | Youtbue
+    body 
+        header 
+            h2 #{pageTitle}
+        nav 
+            ul 
+                li
+                    a(href="/") Youtube
+                li 
+                    a(href="/search") Search Video 
+                li 
+                    a(href="/upload") Upload Video
+                if loginState 
+                    li 
+                        a(href="/logout") Log Out
+                    li 
+                        a(href="/my-profile") #{user}'s Profile
+                else
+                    li 
+                        a(href="/login") LogIn
+                    li 
+                        a(href="/join") Join
+        
+        main 
+            block content
+            block scripts

@@ -1,0 +1,11 @@
+extends base.pug
+
+block content
+    if errorMessage 
+        h3=errorMessage
+    form(method="POST")
+        label Title 
+        input(type="text", placeholder=`${video.title}`, name="title", required)
+        label Description 
+        input(type="text", placeholder=`${video.description}`, name="description", required)
+        input(type="submit", value="Edit")

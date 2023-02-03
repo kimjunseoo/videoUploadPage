@@ -1,0 +1,43 @@
+extends base.pug 
+include mixins/comment.pug
+
+block content 
+    div 
+        h4 #{video.title}
+        div#videoContainer(data-id=video._id)
+            video(src="/"+video.fileUrl, height="500", width="600" ,controls) 
+            div#videoControls 
+                button#playNstop Play
+                button#muteNunmute Mute 
+                input(type="range", step="0.1", value=0.5 ,min="0", max="1")#volume
+                div 
+                    span#currenTime 00:00
+                    span  | 
+                    span#totalTime 00:00
+                div 
+                    input(type="range", step="1", value="0" ,min="0")#timeline
+                div 
+                    button#fullScreenBtn Enter Full Screen
+        h4 
+            span Video description : #{video.description}
+        h4 
+            span Video created at :#{video.createdAt}
+        hr
+        h4 
+            a(href=`/videos/${video._id}/edit`) Edit Video  
+        hr
+        div
+            form#commentForm
+                textarea#commentText(name="comment", cols="30", rows="10") 
+                button#commentSubmitBtn(type="submit") Add Comment 
+        div.video_comments
+            ul 
+                hr
+                each comment in video.comments
+                    +comment(comment)
+
+
+
+block scripts 
+    script(src="/static/videoPlayerControllers.js")
+    script(src="/static/commentsSection.js")

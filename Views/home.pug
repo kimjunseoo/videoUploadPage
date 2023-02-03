@@ -1,0 +1,12 @@
+extends base.pug
+include mixins/video.pug
+
+block content
+    if errorMessage 
+        h3=errorMessage
+    h2 Welcome home
+    hr
+    each video in videos 
+        +video(video) 
+    else 
+        h3 Nothing Found

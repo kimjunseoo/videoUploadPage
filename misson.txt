@@ -1,0 +1,10 @@
+사용자 인증(로그인 / 계정 만들기) >> COMPLETE
+프로필 편집 / 암호 변경 >> COMPLETE
+동영상 업로드 >> COMPLETE
+동영상 검색 >> COMPLETE
+동영상 편집 >> COMPELETE
+동영상 보기 >> COMPLETE ,
+Javascript 비디오 플레이어 >> COMPELETE
+댓글 기능 등록
+댓글 기능 삭제 
+배포 

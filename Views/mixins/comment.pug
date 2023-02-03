@@ -1,0 +1,11 @@
+mixin comment(comment)
+    div#commentStoreSection
+        div#commentInfo
+            h4 
+                span Writer : #{comment.writer}
+            h4 
+                span Comment created at : #{comment.createdAt}
+        div#commentText
+            h4 
+                span Text : #{comment.text}
+        hr

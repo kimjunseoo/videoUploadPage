@@ -1,0 +1,13 @@
+extends base.pug
+
+block content 
+    if changeState
+        h3=changeState
+    form(method="POST") 
+        label Email cannot be changed.
+        input(type="email", placeholder=`${userEmail}`, name="email", disabled)
+        label Change Nickname 
+        input(type="text", placeholder=`${userNickname}`, name="nickname" )
+        label Change Password 
+        input(type="password", name="password" )
+        input(type="submit", value="Edit My Profile")
